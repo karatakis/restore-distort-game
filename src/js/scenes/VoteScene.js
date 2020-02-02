@@ -42,14 +42,11 @@ export default class VoteScene extends Phaser.Scene
   preload ()
   {
     this.load.setBaseURL('/game_assets/')
-
-    this.load.image('bg', 'bg.png')
   }
 
   create ()
   {
-    const image = this.add.image(this.iW / 2, this.iH/2, 'bg')
-    image.setDisplaySize(this.iW, this.iH)
+    this.add.rectangle(this.iW/2, this.iH/2, this.iW, this.iH, 0xFFFFFFC)
 
     this.setupDivElement()
     this.setupHeader()

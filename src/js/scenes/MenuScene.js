@@ -27,7 +27,12 @@ export default class MenuScene extends Phaser.Scene
   {
     this.load.setBaseURL('/game_assets/')
 
-    this.load.image('bg', 'bg.png')
+    this.load.image('like', 'like.png')
+    this.load.image('funny', 'funny.png')
+    this.load.image('smart', 'smart.png')
+
+    this.load.image('left', 'left.png')
+    this.load.image('right', 'right.png')
   }
 
   create ()
@@ -35,8 +40,7 @@ export default class MenuScene extends Phaser.Scene
     const width = window.innerWidth
     const height = window.innerHeight
 
-    const image = this.add.image(width / 2, height/2, 'bg')
-    image.setDisplaySize(width, height)
+    this.add.rectangle(width/2, height/2, width, height, 0xFFFFFFC)
 
     const createGameBtn = this.buttonFactory('Create Game')
     createGameBtn.addEventListener('click', () => this.createGameHandler())
