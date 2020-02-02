@@ -42,6 +42,11 @@ export default class MenuScene extends Phaser.Scene
 
     this.add.rectangle(width/2, height/2, width, height, 0xFFFFFFC)
 
+    const title = document.createElement('h2')
+    title.style = 'height: 100px'
+    title.innerHTML = 'REstorE<br />DIstorT'
+    this.add.dom(width/2, 100, title)
+
     const createGameBtn = this.buttonFactory('Create Game')
     createGameBtn.addEventListener('click', () => this.createGameHandler())
 
